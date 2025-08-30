@@ -1,0 +1,15 @@
+# Godot-specific
+.import/
+.godot/
+
+# C# build artifacts
+.mono/
+.vs/
+bin/
+obj/
+*.sln
+*.csproj
+
+# OS-specific junk
+Thumbs.db
+.DS_Store
