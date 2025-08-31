@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d3fhieqsrstto"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Patient" type="Node2D" parent="."]
+
+[node name="BodyPart" type="Node2D" parent="Patient"]
+
+[node name="ObjectToRemove" type="Node2D" parent="Patient/BodyPart"]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InstructionLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="ProblemSound" type="AudioStreamPlayer" parent="Audio"]
+
+[node name="FixedSound" type="AudioStreamPlayer" parent="Audio"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
