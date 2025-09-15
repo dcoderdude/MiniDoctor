@@ -1,0 +1,33 @@
+✅ Project Tracker – All Phases
+
+Phase 1 – MVP
+- Patient character with one body part to fix
+- One problem object hidden in that body part (e.g., crayon)
+- Patient gives initial visual + audio “problem” indicator
+- Problem body part shows visual + audio hint until tapped
+- Player taps to “fix” it
+- Patient gives visual + audio “fixed” indicator
+- Round ends after fix (or loops — TBD)
+- Doctor’s office background for safe exposure
+- Bilingual dialog audio indicator before other indicators (e.g., “Can you find the ear?” / “¿Puedes encontrar la oreja?”) — asset-dependent
+- Free placeholder assets for art and sound in early build
+
+Phase 2 – Multiple Body Parts
+- Multiple selectable body parts per round
+- Randomized problem placement per playthrough
+- Expanded hint system for each part
+
+Phase 3 – Tools Interaction
+- Introduce basic tool(s) to “remove” the object
+- Visual + audio feedback for tool usage
+- Tool selection UI
+
+Phase 4 – Customization & Rewards
+- Dress-up/customization for patient character
+- Simple reward animations or stickers after successful fixes
+- Unlockable content over time
+
+Phase 5 – Polish & Accessibility
+- Replace placeholders with final art & audio assets
+- Accessibility options (e.g., adjustable hint timing, text-to-speech)
+- Smooth animations and transitions
