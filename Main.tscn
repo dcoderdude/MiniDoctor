@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3fhieqsrstto"]
+[gd_scene load_steps=6 format=3 uid="uid://d3fhieqsrstto"]
 
-[ext_resource type="Script" uid="uid://cbi5gtch3ewr" path="res://ObjectRect.cs" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://cbi5gtch3ewr" path="res://ObjectRectArea.cs" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://dcf5xgymbebgl" path="res://Assets/Sprites/ear.png" id="1_r0du0"]
+[ext_resource type="Texture2D" uid="uid://blfig32a6b5l8" path="res://Assets/Sprites/Crayon.png" id="2_cm0pq"]
 [ext_resource type="AudioStream" uid="uid://3svqv62e7uet" path="res://Assets/Sounds/cartoon-steps-up-smartsound-fx-1-00-02.mp3" id="2_uu6xs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm0pq"]
 
 [node name="Main" type="Node2D"]
 
@@ -18,17 +22,25 @@ color = Color(0.678431, 0.847059, 0.901961, 1)
 [node name="ObjectToRemove" type="Node2D" parent="Patient/BodyPart"]
 
 [node name="BodyPartRect" type="ColorRect" parent="Patient/BodyPart/ObjectToRemove"]
-custom_minimum_size = Vector2(200, 200)
-offset_right = 200.0
-offset_bottom = 200.0
+anchors_preset = -1
+anchor_left = 100.0
+anchor_top = 100.0
+anchor_right = 400.0
+anchor_bottom = 300.0
 color = Color(1, 0, 0, 1)
 
-[node name="ObjectRect" type="ColorRect" parent="Patient/BodyPart/ObjectToRemove"]
-custom_minimum_size = Vector2(100, 100)
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0, 0, 1, 1)
+[node name="EarSprite" type="Sprite2D" parent="Patient/BodyPart/ObjectToRemove/BodyPartRect"]
+texture = ExtResource("1_r0du0")
+centered = false
+
+[node name="ObjectRectArea" type="Area2D" parent="Patient/BodyPart/ObjectToRemove/BodyPartRect"]
 script = ExtResource("1_glv2v")
+
+[node name="ObjectRect" type="Sprite2D" parent="Patient/BodyPart/ObjectToRemove/BodyPartRect/ObjectRectArea"]
+texture = ExtResource("2_cm0pq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Patient/BodyPart/ObjectToRemove/BodyPartRect/ObjectRectArea"]
+shape = SubResource("RectangleShape2D_cm0pq")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -47,3 +59,5 @@ offset_bottom = 23.0
 
 [node name="FixedSound" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("2_uu6xs")
+
+[connection signal="input_event" from="Patient/BodyPart/ObjectToRemove/BodyPartRect/ObjectRectArea" to="Patient/BodyPart/ObjectToRemove/BodyPartRect/ObjectRectArea" method="HandleInputEvent"]

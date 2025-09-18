@@ -1,22 +1,22 @@
 using Godot;
 using System;
 
-public partial class ObjectRect : ColorRect
+public partial class ObjectRectArea : Area2D
 {
 	private AudioStreamPlayer _fixedSound;
-	
+	private Sprite2D _sprite;
+
 	public override void _Ready()
 	{
-		GuiInput += OnGuiInput;
+		_sprite = GetNode<Sprite2D>("ObjectRect");
 		_fixedSound = GetTree().CurrentScene.GetNode<AudioStreamPlayer>("Audio/FixedSound");
-		GD.Print(_fixedSound != null ? "FixedSound found" : "FixedSound NOT found");
 	}
 
-	private void OnGuiInput(InputEvent @event)
+	private void HandleInputEvent(Node2D viewport, InputEvent @event, long shapeIdx)
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
-			Hide();
+			_sprite.Hide();
 			_fixedSound.Play();
 		}
 	}
