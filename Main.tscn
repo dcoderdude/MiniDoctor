@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3fhieqsrstto"]
+[gd_scene load_steps=12 format=3 uid="uid://d3fhieqsrstto"]
 
 [ext_resource type="Script" uid="uid://cbi5gtch3ewr" path="res://ObjectRectArea.cs" id="1_glv2v"]
 [ext_resource type="Texture2D" uid="uid://dcf5xgymbebgl" path="res://Assets/Sprites/ear.png" id="1_r0du0"]
+[ext_resource type="Texture2D" uid="uid://byq3u74svq7i2" path="res://Assets/Sprites/DoctorOffice.png" id="1_wkp8b"]
 [ext_resource type="Texture2D" uid="uid://blfig32a6b5l8" path="res://Assets/Sprites/Crayon.png" id="2_cm0pq"]
 [ext_resource type="AudioStream" uid="uid://3svqv62e7uet" path="res://Assets/Sounds/cartoon-steps-up-smartsound-fx-1-00-02.mp3" id="2_uu6xs"]
 [ext_resource type="Texture2D" uid="uid://0ay3cg1gaqdp" path="res://Assets/Sprites/PatientSprite_Neutral.png" id="4_3dxm6"]
@@ -10,15 +11,15 @@
 [ext_resource type="Script" uid="uid://du7xxbtrgvujp" path="res://ExitButton.cs" id="6_lgr22"]
 [ext_resource type="Texture2D" uid="uid://dvs1m7lkef42e" path="res://Assets/Sprites/ExitButton.png" id="7_03owx"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm0pq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkp8b"]
+size = Vector2(178, 162)
 
 [node name="Main" type="Node2D"]
 
-[node name="Background" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(800, 600)
-offset_right = 1272.0
-offset_bottom = 792.0
-color = Color(0.678431, 0.847059, 0.901961, 1)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(640, 400)
+scale = Vector2(1.25, 0.78125)
+texture = ExtResource("1_wkp8b")
 
 [node name="Patient" type="Node2D" parent="."]
 
@@ -35,8 +36,8 @@ anchor_bottom = 300.0
 color = Color(1, 0, 0, 1)
 
 [node name="EarSprite" type="Sprite2D" parent="Patient/BodyPart/ObjectToRemove/BodyPartRect"]
-position = Vector2(712, 48)
-scale = Vector2(0.414062, 0.317708)
+position = Vector2(1040, 128)
+scale = Vector2(0.21875, 0.177083)
 texture = ExtResource("1_r0du0")
 centered = false
 
@@ -44,25 +45,27 @@ centered = false
 script = ExtResource("1_glv2v")
 
 [node name="ObjectRect" type="Sprite2D" parent="Patient/BodyPart/ObjectToRemove/BodyPartRect/ObjectRectArea"]
-position = Vector2(816, 424)
-scale = Vector2(0.226562, 0.248047)
+position = Vector2(1088, 336)
+scale = Vector2(0.154948, 0.155273)
 texture = ExtResource("2_cm0pq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Patient/BodyPart/ObjectToRemove/BodyPartRect/ObjectRectArea"]
-shape = SubResource("RectangleShape2D_cm0pq")
+position = Vector2(1088, 336)
+shape = SubResource("RectangleShape2D_wkp8b")
+debug_color = Color(0, 0, 0, 0.42)
 
 [node name="PatientSprite_Discomfort" type="Sprite2D" parent="Patient"]
-position = Vector2(282, 371.5)
-scale = Vector2(0.542969, 0.485026)
+position = Vector2(568, 441.75)
+scale = Vector2(0.515625, 0.456055)
 texture = ExtResource("4_trn2v")
 
 [node name="PatientSprite_Joy" type="Sprite2D" parent="Patient"]
-position = Vector2(281.5, 367.25)
-scale = Vector2(0.543945, 0.480143)
+position = Vector2(568, 432)
+scale = Vector2(0.529785, 0.479655)
 texture = ExtResource("5_lgr22")
 
 [node name="PatientSprite_Neutral" type="Sprite2D" parent="Patient"]
-position = Vector2(283.375, 368.5)
+position = Vector2(568, 432)
 scale = Vector2(0.555908, 0.478516)
 texture = ExtResource("4_3dxm6")
 

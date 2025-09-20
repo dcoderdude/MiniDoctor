@@ -12,7 +12,7 @@ public partial class ObjectRectArea : Area2D
 		_fixedSound = GetTree().CurrentScene.GetNode<AudioStreamPlayer>("Audio/FixedSound");
 	}
 
-	private void InputEventHandler(Node2D viewport, InputEvent @event, long shapeIdx)
+	private void InputEventHandler(Viewport viewport, InputEvent @event, int shapeIdx)
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
 		{
