@@ -1,17 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3fhieqsrstto"]
+[gd_scene load_steps=10 format=3 uid="uid://d3fhieqsrstto"]
 
 [ext_resource type="Script" uid="uid://cbi5gtch3ewr" path="res://ObjectRect.cs" id="1_glv2v"]
+[ext_resource type="Texture2D" uid="uid://byq3u74svq7i2" path="res://Assets/Sprites/DoctorOffice.png" id="1_r0du0"]
+[ext_resource type="Script" uid="uid://8cav2pihh8qf" path="res://Patient.cs" id="2_lgr22"]
 [ext_resource type="AudioStream" uid="uid://3svqv62e7uet" path="res://Assets/Sounds/cartoon-steps-up-smartsound-fx-1-00-02.mp3" id="2_uu6xs"]
+[ext_resource type="Texture2D" uid="uid://0ay3cg1gaqdp" path="res://Assets/Sprites/PatientSprite_Neutral.png" id="4_trn2v"]
+[ext_resource type="Texture2D" uid="uid://c8lgitd13fu5x" path="res://Assets/Sprites/PatientSprite_Joy.png" id="5_03owx"]
+[ext_resource type="Texture2D" uid="uid://dldxedxkaiu5l" path="res://Assets/Sprites/PatientSprite_Discomfort.png" id="6_wkp8b"]
+[ext_resource type="Texture2D" uid="uid://85fnlooqegle" path="res://Assets/Sprites/Exit.png" id="7_03owx"]
+[ext_resource type="Script" uid="uid://prw8vasfxf63" path="res://ExitButton.cs" id="7_trn2v"]
 
 [node name="Main" type="Node2D"]
 
-[node name="Background" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(800, 600)
-offset_right = 800.0
-offset_bottom = 600.0
-color = Color(0.678431, 0.847059, 0.901961, 1)
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(574.5, 323.5)
+scale = Vector2(1.12402, 0.62793)
+texture = ExtResource("1_r0du0")
 
 [node name="Patient" type="Node2D" parent="."]
+script = ExtResource("2_lgr22")
+neutralPath = NodePath("PatientSprite_Neutral")
+discomfortPath = NodePath("PatientSprite_Discomfort")
+joyPath = NodePath("PatientSprite_Joy")
 
 [node name="BodyPart" type="Node2D" parent="Patient"]
 
@@ -30,16 +40,35 @@ offset_bottom = 40.0
 color = Color(0, 0, 1, 1)
 script = ExtResource("1_glv2v")
 
+[node name="PatientSprite_Neutral" type="Sprite2D" parent="Patient"]
+position = Vector2(657, 378)
+scale = Vector2(0.334473, 0.325846)
+texture = ExtResource("4_trn2v")
+
+[node name="PatientSprite_Joy" type="Sprite2D" parent="Patient"]
+position = Vector2(657, 378.25)
+scale = Vector2(0.324219, 0.317383)
+texture = ExtResource("5_03owx")
+
+[node name="PatientSprite_Discomfort" type="Sprite2D" parent="Patient"]
+position = Vector2(658, 380)
+scale = Vector2(0.365234, 0.320313)
+texture = ExtResource("6_wkp8b")
+
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="InstructionLabel" type="Label" parent="UI"]
+[node name="Exit" type="Button" parent="UI"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 1042.0
+offset_top = 22.0
+offset_right = 1130.0
+offset_bottom = 110.0
+icon = ExtResource("7_03owx")
+script = ExtResource("7_trn2v")
 
 [node name="Audio" type="Node" parent="."]
 

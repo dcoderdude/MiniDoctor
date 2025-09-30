@@ -9,7 +9,6 @@ public partial class ObjectRect : ColorRect
 	{
 		GuiInput += OnGuiInput;
 		_fixedSound = GetTree().CurrentScene.GetNode<AudioStreamPlayer>("Audio/FixedSound");
-		GD.Print(_fixedSound != null ? "FixedSound found" : "FixedSound NOT found");
 	}
 
 	private void OnGuiInput(InputEvent @event)
