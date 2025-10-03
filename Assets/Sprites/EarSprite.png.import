@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcf5xgymbebgl"
-path="res://.godot/imported/ear.png-d52933860a1af4239185d48c94220937.ctex"
+path="res://.godot/imported/EarSprite.png-44b3462244dfaeed3f488d41d8a44b2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/ear.png"
-dest_files=["res://.godot/imported/ear.png-d52933860a1af4239185d48c94220937.ctex"]
+source_file="res://Assets/Sprites/EarSprite.png"
+dest_files=["res://.godot/imported/EarSprite.png-44b3462244dfaeed3f488d41d8a44b2b.ctex"]
 
 [params]
 
