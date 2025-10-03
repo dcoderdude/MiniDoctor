@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://d3fhieqsrstto"]
+[gd_scene load_steps=12 format=3 uid="uid://d3fhieqsrstto"]
 
-[ext_resource type="Script" uid="uid://cbi5gtch3ewr" path="res://ObjectRect.cs" id="1_glv2v"]
 [ext_resource type="Texture2D" uid="uid://byq3u74svq7i2" path="res://Assets/Sprites/DoctorOffice.png" id="1_r0du0"]
 [ext_resource type="Texture2D" uid="uid://dcf5xgymbebgl" path="res://Assets/Sprites/EarSprite.png" id="2_03owx"]
+[ext_resource type="Script" uid="uid://cy8hp7gg4v20w" path="res://Patient.cs" id="2_lgr22"]
 [ext_resource type="AudioStream" uid="uid://3svqv62e7uet" path="res://Assets/Sounds/cartoon-steps-up-smartsound-fx-1-00-02.mp3" id="2_uu6xs"]
+[ext_resource type="Script" uid="uid://bma1td8yyr4s0" path="res://RemovableObjectContainer.cs" id="3_wkp8b"]
 [ext_resource type="Texture2D" uid="uid://0ay3cg1gaqdp" path="res://Assets/Sprites/PatientSprite_Neutral.png" id="4_trn2v"]
 [ext_resource type="Texture2D" uid="uid://blfig32a6b5l8" path="res://Assets/Sprites/CrayonSprite.png" id="4_wkp8b"]
 [ext_resource type="Texture2D" uid="uid://c8lgitd13fu5x" path="res://Assets/Sprites/PatientSprite_Joy.png" id="5_03owx"]
@@ -19,12 +20,16 @@ scale = Vector2(1.12402, 0.62793)
 texture = ExtResource("1_r0du0")
 
 [node name="Patient" type="Node2D" parent="."]
+script = ExtResource("2_lgr22")
+neutralPath = NodePath("PatientSprite_Neutral")
+discomfortPath = NodePath("PatientSprite_Discomfort")
+joyPath = NodePath("PatientSprite_Joy")
 
 [node name="BodyPart" type="Node2D" parent="Patient"]
 
-[node name="ObjectToRemove" type="Node2D" parent="Patient/BodyPart"]
+[node name="ExaminationContainer" type="Node2D" parent="Patient/BodyPart"]
 
-[node name="BodyPartContainer" type="ColorRect" parent="Patient/BodyPart/ObjectToRemove"]
+[node name="BodyPartContainer" type="ColorRect" parent="Patient/BodyPart/ExaminationContainer"]
 custom_minimum_size = Vector2(200, 200)
 offset_left = 940.0
 offset_top = 137.0
@@ -32,23 +37,23 @@ offset_right = 1140.0
 offset_bottom = 349.0
 color = Color(0, 1, 1, 1)
 
-[node name="EarSprite" type="Sprite2D" parent="Patient/BodyPart/ObjectToRemove/BodyPartContainer"]
+[node name="EarSprite" type="Sprite2D" parent="Patient/BodyPart/ExaminationContainer/BodyPartContainer"]
 position = Vector2(100, 98)
 scale = Vector2(0.183838, 0.130208)
 texture = ExtResource("2_03owx")
 
-[node name="ObjectRect" type="ColorRect" parent="Patient/BodyPart/ObjectToRemove"]
+[node name="RemovableObjectContainer" type="ColorRect" parent="Patient/BodyPart/ExaminationContainer"]
 custom_minimum_size = Vector2(100, 100)
 offset_left = 918.0
 offset_top = 265.0
 offset_right = 1018.0
 offset_bottom = 365.0
 color = Color(1, 1, 1, 0)
-script = ExtResource("1_glv2v")
+script = ExtResource("3_wkp8b")
 
-[node name="CrayonSprite" type="Sprite2D" parent="Patient/BodyPart/ObjectToRemove/ObjectRect"]
-position = Vector2(83, 36)
-scale = Vector2(0.113118, 0.138916)
+[node name="CrayonSprite" type="Sprite2D" parent="Patient/BodyPart/ExaminationContainer/RemovableObjectContainer"]
+position = Vector2(50.9375, 40.5625)
+scale = Vector2(0.154867, 0.130005)
 texture = ExtResource("4_wkp8b")
 
 [node name="PatientSprite_Neutral" type="Sprite2D" parent="Patient"]

@@ -11,6 +11,8 @@ public partial class Patient : Node2D
 	private Sprite2D discomfortSprite;
 	private Sprite2D joySprite;
 
+	// TODO: create a loop that iterates over removeable objects
+	// and listen for a signal that object was removed
 	public override void _Ready()
 	{
 		neutralSprite = GetNode<Sprite2D>(neutralPath);
@@ -20,15 +22,6 @@ public partial class Patient : Node2D
 		neutralSprite.Visible = false;
 		discomfortSprite.Visible = true;
 		joySprite.Visible = false;
-
-		foreach (Node2D bodyPart in GetNode("BodyPart").GetChildren())
-		{
-			if (bodyPart is Node2D bp)
-			{
-				//var objectArea = bp.GetNode<Area2D>("BodyPartRect/ObjectRectArea");
-				//objectArea.Connect("ObjectRemovedEventHandler", new Callable(this, nameof(OnObjectRemoved)));
-			}
-		}
 	}
 
 	private void OnObjectRemoved()

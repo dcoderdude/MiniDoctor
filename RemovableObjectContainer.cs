@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ObjectRect : ColorRect
+public partial class RemovableObjectContainer : ColorRect
 {
 	private AudioStreamPlayer _fixedSound;
 	
@@ -10,7 +10,8 @@ public partial class ObjectRect : ColorRect
 		GuiInput += OnGuiInput;
 		_fixedSound = GetTree().CurrentScene.GetNode<AudioStreamPlayer>("Audio/FixedSound");
 	}
-
+	
+	// TODO: create a signal that the removeable object was removed
 	private void OnGuiInput(InputEvent @event)
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
