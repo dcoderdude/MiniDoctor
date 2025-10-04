@@ -25,11 +25,11 @@ neutralPath = NodePath("PatientSprite_Neutral")
 discomfortPath = NodePath("PatientSprite_Discomfort")
 joyPath = NodePath("PatientSprite_Joy")
 
-[node name="BodyPart" type="Node2D" parent="Patient"]
+[node name="ExaminationSection" type="Node2D" parent="Patient"]
 
-[node name="ExaminationContainer" type="Node2D" parent="Patient/BodyPart"]
+[node name="ExaminationContainer" type="Node2D" parent="Patient/ExaminationSection"]
 
-[node name="BodyPartContainer" type="ColorRect" parent="Patient/BodyPart/ExaminationContainer"]
+[node name="BodyPartContainer" type="ColorRect" parent="Patient/ExaminationSection/ExaminationContainer"]
 custom_minimum_size = Vector2(200, 200)
 offset_left = 940.0
 offset_top = 137.0
@@ -37,12 +37,12 @@ offset_right = 1140.0
 offset_bottom = 349.0
 color = Color(0, 1, 1, 1)
 
-[node name="EarSprite" type="Sprite2D" parent="Patient/BodyPart/ExaminationContainer/BodyPartContainer"]
+[node name="EarSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/BodyPartContainer"]
 position = Vector2(100, 98)
 scale = Vector2(0.183838, 0.130208)
 texture = ExtResource("2_03owx")
 
-[node name="RemovableObjectContainer" type="ColorRect" parent="Patient/BodyPart/ExaminationContainer"]
+[node name="RemovableObjectContainer" type="ColorRect" parent="Patient/ExaminationSection/ExaminationContainer"]
 custom_minimum_size = Vector2(100, 100)
 offset_left = 918.0
 offset_top = 265.0
@@ -51,7 +51,7 @@ offset_bottom = 365.0
 color = Color(1, 1, 1, 0)
 script = ExtResource("3_wkp8b")
 
-[node name="CrayonSprite" type="Sprite2D" parent="Patient/BodyPart/ExaminationContainer/RemovableObjectContainer"]
+[node name="CrayonSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/RemovableObjectContainer"]
 position = Vector2(50.9375, 40.5625)
 scale = Vector2(0.154867, 0.130005)
 texture = ExtResource("4_wkp8b")

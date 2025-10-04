@@ -11,10 +11,11 @@ public partial class Patient : Node2D
 	private Sprite2D discomfortSprite;
 	private Sprite2D joySprite;
 
-	// TODO: create a loop that iterates over removeable objects
-	// and listen for a signal that object was removed
 	public override void _Ready()
 	{
+		RemovableObjectContainer removableObjects = GetNode<RemovableObjectContainer>("ExaminationSection/ExaminationContainer/RemovableObjectContainer");
+		removableObjects.Connect("RemovedObject", new Callable(this, "OnObjectRemoved"));
+		
 		neutralSprite = GetNode<Sprite2D>(neutralPath);
 		discomfortSprite = GetNode<Sprite2D>(discomfortPath);
 		joySprite = GetNode<Sprite2D>(joyPath);
