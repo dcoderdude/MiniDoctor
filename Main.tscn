@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://byq3u74svq7i2" path="res://Assets/Sprites/DoctorOffice.png" id="1_r0du0"]
 [ext_resource type="Texture2D" uid="uid://dcf5xgymbebgl" path="res://Assets/Sprites/EarSprite.png" id="2_03owx"]
 [ext_resource type="Script" uid="uid://cy8hp7gg4v20w" path="res://Patient.cs" id="2_lgr22"]
-[ext_resource type="AudioStream" uid="uid://3svqv62e7uet" path="res://Assets/Sounds/cartoon-steps-up-smartsound-fx-1-00-02.mp3" id="2_uu6xs"]
+[ext_resource type="AudioStream" uid="uid://3svqv62e7uet" path="res://Assets/Sounds/FixedSound.mp3" id="2_uu6xs"]
 [ext_resource type="Script" uid="uid://bma1td8yyr4s0" path="res://RemovableObjectContainer.cs" id="3_wkp8b"]
 [ext_resource type="Texture2D" uid="uid://0ay3cg1gaqdp" path="res://Assets/Sprites/PatientSprite_Neutral.png" id="4_trn2v"]
 [ext_resource type="Texture2D" uid="uid://blfig32a6b5l8" path="res://Assets/Sprites/CrayonSprite.png" id="4_wkp8b"]
