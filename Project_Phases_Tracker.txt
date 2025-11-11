@@ -17,6 +17,25 @@ Phase 2 – Multiple Rounds Game loop
 - Player taps to “fix” it
 - Round loops after fix, new randomized problem object and body part appear in examination container per round
 - Winning round — TBD
+Gameplay Flow (Ideas for phase 2)
+
+Start Prompt:
+The patient shows subtle cues visual discomfort, brief bilingual voice line introduces the round indicating the discomfort in body part — e.g., “My ear hurts can you please check my ear? / Me duele la oreja, ¿puedes revisarmela por favor?”
+
+Examination Phase:
+After a short pause the players attention is drawn to the examination area - e.g. visual highlight examination area, highlight the problem object e.g. crayon and play brief problem sound.
+
+Fixing Phase:
+Loop highlights and sound in examination area until phase 1’s click interaction.
+
+Resolution:
+Patient reacts with joy and a brief success sound.
+
+Transition:
+The next round starts automatically after a short visual neutral moment, randomizing both body part and object.
+
+Win Condition:
+After a fixed number of successful rounds (e.g., 3–5), the player sees a “Great job, Doctor!” summary or simple mini-reward.
 
 Phase 3 – Tools Interaction (Before we start this phase the game should have been exported to my daughters tablet)
 - Introduce basic tool(s) to “remove” the object
@@ -31,3 +50,25 @@ Phase 4 – Customization & Rewards
 Phase 5 – Polish & Accessibility
 - Accessibility options (e.g., adjustable hint timing, text-to-speech)
 - Smooth animations and transitions
+
+GAME PLAY LOOP
+At launch of game
+
+Background (doctor office). 
+
+Patient in discomfort expression. 
+
+A visible cyan rectangle with ear + mouth sprite (This is a bug as expected for now until we discuss a game loop), indicating the body part.
+
+An object crayon + lago (This is a bug as expected for now until we discuss a game loop) inside that body part container, ready for interaction.
+
+The Exit button in the corner.
+
+EarPainEnglish / EarPainSpanish – bilingual pain voice lines
+
+*Current game play one time interaction ( until we have a game loop )
+
+Patient shows joy and after short delay shows neutral expression.
+
+Audio fixed sound to play depending on if the player has interacted with the removable object container.
+
