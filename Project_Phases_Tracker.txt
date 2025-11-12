@@ -19,37 +19,9 @@ Phase 2 – Multiple Rounds Game loop
 - Winning round — TBD
 Gameplay Flow (Ideas for phase 2)
 
-Start Prompt:
-The patient shows subtle cues visual discomfort, brief bilingual voice line introduces the round indicating the discomfort in body part — e.g., “My ear hurts can you please check my ear? / Me duele la oreja, ¿puedes revisarmela por favor?”
-
-Examination Phase:
-After a short pause the players attention is drawn to the examination area - e.g. visual highlight examination area, highlight the problem object e.g. crayon and play brief problem sound.
-
-Fixing Phase:
-Loop highlights and sound in examination area until phase 1’s click interaction.
-
-Resolution:
-Patient reacts with joy and a brief success sound.
-
-Transition:
-The next round starts automatically after a short visual neutral moment, randomizing both body part and object.
-
-Win Condition:
-After a fixed number of successful rounds (e.g., 3–5), the player sees a “Great job, Doctor!” summary or simple mini-reward.
-
-Phase 3 – Tools Interaction (Before we start this phase the game should have been exported to my daughters tablet)
-- Introduce basic tool(s) to “remove” the object
-- Visual + audio feedback for tool usage
-- Tool selection UI
-
-Phase 4 – Customization & Rewards
-- Dress-up/customization for patient character
-- Simple reward animations or stickers after successful fixes
-- Unlockable content over time
-
-Phase 5 – Polish & Accessibility
-- Accessibility options (e.g., adjustable hint timing, text-to-speech)
-- Smooth animations and transitions
+Phase 3 - In-game & Platform
+- add logic inside the running game so that, after the first MiniDoctor experience finishes, the game can continue to another experience without having to press Godot’s Play Scene again.
+- export the project from Godot so it can be launched on an Android tablet.
 
 GAME PLAY LOOP
 At launch of game
@@ -71,4 +43,17 @@ EarPainEnglish / EarPainSpanish – bilingual pain voice lines
 Patient shows joy and after short delay shows neutral expression.
 
 Audio fixed sound to play depending on if the player has interacted with the removable object container.
+
+Start Prompt:
+The patient shows subtle cues visual discomfort, brief bilingual voice line introduces the round indicating the discomfort in body part — e.g., “My ear hurts can you please check my ear? / Me duele la oreja, ¿puedes revisarmela por favor?”
+
+Examination Phase:
+After a short pause the players attention is drawn to the examination area - e.g. visual highlight examination area, highlight the problem object e.g. crayon and play brief problem sound.
+
+Fixing Phase:
+Loop highlights and sound in examination area until phase 1’s click interaction.
+
+Resolution:
+Patient reacts with joy and a brief success sound.
+
 
