@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3fhieqsrstto"]
+[gd_scene load_steps=21 format=3 uid="uid://d3fhieqsrstto"]
 
 [ext_resource type="Texture2D" uid="uid://byq3u74svq7i2" path="res://Assets/Sprites/DoctorOffice.png" id="1_r0du0"]
 [ext_resource type="Texture2D" uid="uid://dcf5xgymbebgl" path="res://Assets/Sprites/EarSprite.png" id="2_03owx"]
@@ -18,6 +18,8 @@
 [ext_resource type="AudioStream" uid="uid://cdvvtqxhv4g0r" path="res://Assets/Sounds/EarPainSpanish.mp3" id="14_j4qnp"]
 [ext_resource type="AudioStream" uid="uid://13po63u0fr3a" path="res://Assets/Sounds/MouthPainEnglish.mp3" id="17_sc1dx"]
 [ext_resource type="AudioStream" uid="uid://be2cbrqwi7ujs" path="res://Assets/Sounds/MouthPainSpanish.mp3" id="18_kjvhd"]
+[ext_resource type="AudioStream" uid="uid://j56c2jhbbjhl" path="res://Assets/Sounds/ReliefEnglish.mp3" id="19_2gh4u"]
+[ext_resource type="AudioStream" uid="uid://dwgysfjn7im2l" path="res://Assets/Sounds/ReliefSpanish.mp3" id="20_devvj"]
 
 [node name="Main" type="Node2D"]
 
@@ -120,3 +122,9 @@ stream = ExtResource("17_sc1dx")
 
 [node name="MouthPainSpanish" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("18_kjvhd")
+
+[node name="ReliefEnglish" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("19_2gh4u")
+
+[node name="ReliefSpanish" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("20_devvj")

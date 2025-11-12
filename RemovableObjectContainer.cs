@@ -6,9 +6,9 @@ public partial class RemovableObjectContainer : ColorRect
 {
 	[Signal]
 	public delegate void RemovedObjectEventHandler();
-	
+
 	private AudioStreamPlayer _fixedSound;
-	
+
 	public override void _Ready()
 	{
 		ChooseRandomObjectToRemoveName();
