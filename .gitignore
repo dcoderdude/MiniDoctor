@@ -9,6 +9,7 @@ bin/
 obj/
 *.sln
 *.csproj
+MiniDoctorBuilds/
 
 # OS-specific junk
 Thumbs.db
