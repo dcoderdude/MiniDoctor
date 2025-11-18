@@ -6,7 +6,7 @@ public partial class ExitButton : Button
 	{
 		Pressed += OnExitPressed;
 	}
-
+	
 	private void OnExitPressed()
 	{
 		GetTree().Quit();

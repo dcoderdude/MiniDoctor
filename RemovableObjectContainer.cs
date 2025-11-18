@@ -6,16 +6,16 @@ public partial class RemovableObjectContainer : ColorRect
 {
 	[Signal]
 	public delegate void RemovedObjectEventHandler();
-
+	
 	private AudioStreamPlayer _fixedSound;
-
+	
 	public override void _Ready()
 	{
 		ChooseRandomObjectToRemoveName();
 		GuiInput += OnGuiInput;
 		_fixedSound = GetTree().CurrentScene.GetNode<AudioStreamPlayer>("Audio/FixedSound");
 	}
-
+	
 	private void OnGuiInput(InputEvent @event)
 	{
 		if (@event is InputEventMouseButton mouseEvent && mouseEvent.Pressed)
@@ -25,7 +25,7 @@ public partial class RemovableObjectContainer : ColorRect
 			EmitSignal("RemovedObject");
 		}
 	}
-
+	
 	private string ChooseRandomObjectToRemoveName()
 	{
 		var objectToRemoveSprites = new List<Sprite2D>();
@@ -43,7 +43,9 @@ public partial class RemovableObjectContainer : ColorRect
 			sprite.Visible = false;
 		}
 		chosenSpriteToRemove.Visible = true;
+	
 		GD.Print("ObjectToRemove=" + chosenSpriteToRemove.Name);
+	
 		return chosenSpriteToRemove.Name;
 	}
 }

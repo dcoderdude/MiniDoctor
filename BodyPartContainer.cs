@@ -2,21 +2,21 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class BodyPartContainer : ColorRect
+public partial class BodyPartContainer : Sprite2D
 {
 	[Signal]
 	public delegate void BodyPartEventHandler(Sprite2D bodyPart);
-
+	
 	public override void _Ready()
 	{
 		CallDeferred(nameof(BodyPartToExamine), GetNode<Sprite2D>(ChooseRandomBodyPartName()));
 	}
-
+	
 	private void BodyPartToExamine(Sprite2D sprite)
 	{
 		EmitSignal("BodyPart", sprite);
 	}
-
+	
 	private string ChooseRandomBodyPartName()
 	{
 		var bodyPartSprites = new List<Sprite2D>();

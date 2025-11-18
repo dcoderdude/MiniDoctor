@@ -1,10 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://d3fhieqsrstto"]
+[gd_scene load_steps=26 format=3 uid="uid://d3fhieqsrstto"]
 
 [ext_resource type="Texture2D" uid="uid://byq3u74svq7i2" path="res://Assets/Sprites/DoctorOffice.png" id="1_r0du0"]
 [ext_resource type="Texture2D" uid="uid://dcf5xgymbebgl" path="res://Assets/Sprites/EarSprite.png" id="2_03owx"]
 [ext_resource type="Script" uid="uid://cy8hp7gg4v20w" path="res://Patient.cs" id="2_lgr22"]
 [ext_resource type="AudioStream" uid="uid://3svqv62e7uet" path="res://Assets/Sounds/FixedSound.mp3" id="2_uu6xs"]
 [ext_resource type="Script" uid="uid://db2wdohux7wvu" path="res://BodyPartContainer.cs" id="3_5vvyt"]
+[ext_resource type="Texture2D" uid="uid://oojb3cjpigrg" path="res://Assets/Sprites/XRayBackground.png" id="3_devvj"]
 [ext_resource type="Script" uid="uid://bma1td8yyr4s0" path="res://RemovableObjectContainer.cs" id="3_wkp8b"]
 [ext_resource type="Texture2D" uid="uid://0ay3cg1gaqdp" path="res://Assets/Sprites/PatientSprite_Neutral.png" id="4_trn2v"]
 [ext_resource type="Texture2D" uid="uid://blfig32a6b5l8" path="res://Assets/Sprites/CrayonSprite.png" id="4_wkp8b"]
@@ -12,14 +13,18 @@
 [ext_resource type="Texture2D" uid="uid://e2l7bimpfbh1" path="res://Assets/Sprites/MouthSprite.png" id="5_fpfj3"]
 [ext_resource type="Texture2D" uid="uid://dldxedxkaiu5l" path="res://Assets/Sprites/PatientSprite_Discomfort.png" id="6_wkp8b"]
 [ext_resource type="Texture2D" uid="uid://85fnlooqegle" path="res://Assets/Sprites/Exit.png" id="7_03owx"]
+[ext_resource type="Texture2D" uid="uid://cryatb01qlkmm" path="res://Assets/Sprites/EyeSprite.png" id="7_hhcpw"]
 [ext_resource type="Script" uid="uid://prw8vasfxf63" path="res://ExitButton.cs" id="7_trn2v"]
 [ext_resource type="Texture2D" uid="uid://c3we65aqia6e3" path="res://Assets/Sprites/LegoSprite.png" id="8_sc1dx"]
+[ext_resource type="Texture2D" uid="uid://pucy1417bj70" path="res://Assets/Sprites/CoinSprite.png" id="11_mxvw5"]
 [ext_resource type="AudioStream" uid="uid://mh0gjfr63pgp" path="res://Assets/Sounds/EarPainEnglish.mp3" id="13_c2ibq"]
 [ext_resource type="AudioStream" uid="uid://cdvvtqxhv4g0r" path="res://Assets/Sounds/EarPainSpanish.mp3" id="14_j4qnp"]
 [ext_resource type="AudioStream" uid="uid://13po63u0fr3a" path="res://Assets/Sounds/MouthPainEnglish.mp3" id="17_sc1dx"]
 [ext_resource type="AudioStream" uid="uid://be2cbrqwi7ujs" path="res://Assets/Sounds/MouthPainSpanish.mp3" id="18_kjvhd"]
 [ext_resource type="AudioStream" uid="uid://j56c2jhbbjhl" path="res://Assets/Sounds/ReliefEnglish.mp3" id="19_2gh4u"]
 [ext_resource type="AudioStream" uid="uid://dwgysfjn7im2l" path="res://Assets/Sounds/ReliefSpanish.mp3" id="20_devvj"]
+[ext_resource type="AudioStream" uid="uid://cm473yw7sgsnc" path="res://Assets/Sounds/EyePainEnglish.mp3" id="24_xrxkg"]
+[ext_resource type="AudioStream" uid="uid://di2nsgwglb805" path="res://Assets/Sounds/EyePainSpanish.mp3" id="25_mxvw5"]
 
 [node name="Main" type="Node2D"]
 
@@ -38,43 +43,48 @@ joyPath = NodePath("PatientSprite_Joy")
 
 [node name="ExaminationContainer" type="Node2D" parent="Patient/ExaminationSection"]
 
-[node name="BodyPartContainer" type="ColorRect" parent="Patient/ExaminationSection/ExaminationContainer"]
-custom_minimum_size = Vector2(200, 200)
-offset_left = 933.0
-offset_top = 132.0
-offset_right = 1133.0
-offset_bottom = 332.0
-color = Color(0, 1, 1, 1)
+[node name="BodyPartContainer" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer"]
+position = Vector2(1036, 233)
+scale = Vector2(0.192871, 0.17627)
+texture = ExtResource("3_devvj")
 script = ExtResource("3_5vvyt")
 
 [node name="EarSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/BodyPartContainer"]
-position = Vector2(102, 100)
-scale = Vector2(0.133789, 0.0937501)
+position = Vector2(15.5544, 0)
+scale = Vector2(0.623856, 0.456847)
 texture = ExtResource("2_03owx")
 
 [node name="MouthSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/BodyPartContainer"]
-position = Vector2(99, 96)
-scale = Vector2(1.23044, 1.79699)
+position = Vector2(10.3697, 11.3462)
+scale = Vector2(5.45438, 8.50049)
 texture = ExtResource("5_fpfj3")
+
+[node name="EyeSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/BodyPartContainer"]
+texture = ExtResource("7_hhcpw")
 
 [node name="RemovableObjectContainer" type="ColorRect" parent="Patient/ExaminationSection/ExaminationContainer"]
 custom_minimum_size = Vector2(100, 100)
-offset_left = 965.0
-offset_top = 156.0
-offset_right = 1103.0
-offset_bottom = 309.0
+offset_left = 968.0
+offset_top = 154.0
+offset_right = 1106.0
+offset_bottom = 307.0
 color = Color(1, 1, 1, 0)
 script = ExtResource("3_wkp8b")
 
 [node name="CrayonSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/RemovableObjectContainer"]
-position = Vector2(60, 70)
+position = Vector2(69.9999, 81)
 rotation = -3.12035
 scale = Vector2(0.0719009, 0.0785445)
 texture = ExtResource("4_wkp8b")
 
 [node name="LegoSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/RemovableObjectContainer"]
-position = Vector2(64, 73)
+position = Vector2(72, 81)
 texture = ExtResource("8_sc1dx")
+
+[node name="CoinSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/RemovableObjectContainer"]
+position = Vector2(69, 81)
+scale = Vector2(0.092041, 0.0839844)
+texture = ExtResource("11_mxvw5")
 
 [node name="PatientSprite_Neutral" type="Sprite2D" parent="Patient"]
 position = Vector2(657, 378)
@@ -128,3 +138,9 @@ stream = ExtResource("19_2gh4u")
 
 [node name="ReliefSpanish" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("20_devvj")
+
+[node name="EyePainEnglish" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("24_xrxkg")
+
+[node name="EyePainSpanish" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("25_mxvw5")
