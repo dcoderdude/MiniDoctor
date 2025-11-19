@@ -3,6 +3,9 @@ using System;
 
 public partial class Patient : Node2D
 {
+	[Signal]
+	public delegate void AudioQueEventHandler();
+	
 	[Export] private NodePath neutralPath;
 	[Export] private NodePath discomfortPath;
 	[Export] private NodePath joyPath;
@@ -48,7 +51,11 @@ public partial class Patient : Node2D
 	
 			discomfortTimer.WaitTime = 5.0f;
 			discomfortTimer.OneShot = true;
-			discomfortTimer.Timeout += () => _problemPromptSpanish.Play();
+			discomfortTimer.Timeout += () =>
+			{
+				_problemPromptSpanish.Connect("finished", new Callable(this, nameof(OnSpanishFinished)));
+				_problemPromptSpanish.Play();
+			};
 			discomfortTimer.Start();
 		}
 		else if(_currentBodyPart == GetNode<Sprite2D>("ExaminationSection/ExaminationContainer/BodyPartContainer/MouthSprite"))
@@ -60,7 +67,11 @@ public partial class Patient : Node2D
 	
 			discomfortTimer.WaitTime = 5.0f;
 			discomfortTimer.OneShot = true;
-			discomfortTimer.Timeout += () => _problemPromptSpanish.Play();
+			discomfortTimer.Timeout += () =>
+			{
+				_problemPromptSpanish.Connect("finished", new Callable(this, nameof(OnSpanishFinished)));
+				_problemPromptSpanish.Play();
+			};
 			discomfortTimer.Start();
 		}
 		else if(_currentBodyPart == GetNode<Sprite2D>("ExaminationSection/ExaminationContainer/BodyPartContainer/EyeSprite"))
@@ -72,9 +83,18 @@ public partial class Patient : Node2D
 	
 			discomfortTimer.WaitTime = 5.0f;
 			discomfortTimer.OneShot = true;
-			discomfortTimer.Timeout += () => _problemPromptSpanish.Play();
+			discomfortTimer.Timeout += () =>
+			{
+				_problemPromptSpanish.Connect("finished", new Callable(this, nameof(OnSpanishFinished)));
+				_problemPromptSpanish.Play();
+			};
 			discomfortTimer.Start();
 		}
+	}
+	
+	private void OnSpanishFinished()
+	{
+		EmitSignal("AudioQue");
 	}
 	
 	private void OnObjectRemoved()

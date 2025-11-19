@@ -14,6 +14,16 @@ public partial class RemovableObjectContainer : ColorRect
 		ChooseRandomObjectToRemoveName();
 		GuiInput += OnGuiInput;
 		_fixedSound = GetTree().CurrentScene.GetNode<AudioStreamPlayer>("Audio/FixedSound");
+		
+		Hide();
+		
+		var patient = GetNode<Patient>("../../..");
+		patient.Connect("AudioQue", new Callable(this, "ShowObjectContainer"));
+	}
+	
+	private void ShowObjectContainer()
+	{
+		Show();
 	}
 	
 	private void OnGuiInput(InputEvent @event)
@@ -43,8 +53,6 @@ public partial class RemovableObjectContainer : ColorRect
 			sprite.Visible = false;
 		}
 		chosenSpriteToRemove.Visible = true;
-	
-		GD.Print("ObjectToRemove=" + chosenSpriteToRemove.Name);
 	
 		return chosenSpriteToRemove.Name;
 	}

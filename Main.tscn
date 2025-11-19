@@ -55,8 +55,8 @@ scale = Vector2(0.623856, 0.456847)
 texture = ExtResource("2_03owx")
 
 [node name="MouthSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/BodyPartContainer"]
-position = Vector2(10.3697, 11.3462)
-scale = Vector2(5.45438, 8.50049)
+position = Vector2(5.18484, -5.67309)
+scale = Vector2(6.2909, 9.19047)
 texture = ExtResource("5_fpfj3")
 
 [node name="EyeSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/BodyPartContainer"]
@@ -82,8 +82,8 @@ position = Vector2(72, 81)
 texture = ExtResource("8_sc1dx")
 
 [node name="CoinSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/RemovableObjectContainer"]
-position = Vector2(69, 81)
-scale = Vector2(0.092041, 0.0839844)
+position = Vector2(66, 79)
+scale = Vector2(0.0596924, 0.0615234)
 texture = ExtResource("11_mxvw5")
 
 [node name="PatientSprite_Neutral" type="Sprite2D" parent="Patient"]

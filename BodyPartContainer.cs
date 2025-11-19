@@ -34,7 +34,7 @@ public partial class BodyPartContainer : Sprite2D
 			sprite.Visible = false;
 		}
 		chosenSprite.Visible = true;
-		GD.Print("BodyPart=" + chosenSprite.Name);
+	
 		return chosenSprite.Name;
 	}
 }
