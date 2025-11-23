@@ -4,37 +4,46 @@ using System.Collections.Generic;
 
 public partial class BodyPartContainer : Sprite2D
 {
-	[Signal]
-	public delegate void BodyPartEventHandler(Sprite2D bodyPart);
-	
-	public override void _Ready()
-	{
-		CallDeferred(nameof(BodyPartToExamine), GetNode<Sprite2D>(ChooseRandomBodyPartName()));
-	}
-	
-	private void BodyPartToExamine(Sprite2D sprite)
-	{
-		EmitSignal("BodyPart", sprite);
-	}
-	
-	private string ChooseRandomBodyPartName()
-	{
-		var bodyPartSprites = new List<Sprite2D>();
-		foreach (Node child in GetChildren())
-		{
-			if (child is Sprite2D sprite)
-			{
-				bodyPartSprites.Add(sprite);
-			}
-		}
-		var randomIndex = (int)(GD.Randi() % (uint)bodyPartSprites.Count);
-		var chosenSprite = bodyPartSprites[randomIndex];
-		foreach (var sprite in bodyPartSprites)
-		{
-			sprite.Visible = false;
-		}
-		chosenSprite.Visible = true;
-	
-		return chosenSprite.Name;
-	}
+   [Signal]
+   public delegate void BodyPartEventHandler(Sprite2D bodyPart);
+   
+   public override void _Ready()
+   {
+      CallDeferred(nameof(BodyPartToExamine), GetNode<Sprite2D>(ChooseRandomBodyPartName()));
+      
+      var main = GetNode<Main>("../../../..");
+      main.Connect("MiniStoryStartQue", new Callable(this, "OnRoundReady"));
+   }
+   
+   private string ChooseRandomBodyPartName()
+   {
+      var bodyPartSprites = new List<Sprite2D>();
+      foreach (Node child in GetChildren())
+      {
+         if (child is Sprite2D sprite)
+         {
+            bodyPartSprites.Add(sprite);
+         }
+      }
+      
+      var randomIndex = (int)(GD.Randi() % (uint)bodyPartSprites.Count);
+      var chosenSprite = bodyPartSprites[randomIndex];
+      foreach (var sprite in bodyPartSprites)
+      {
+         sprite.Visible = false;
+      }
+      chosenSprite.Visible = true;
+      
+      return chosenSprite.Name;
+   }
+   
+   private void BodyPartToExamine(Sprite2D sprite)
+   {
+      EmitSignal("BodyPart", sprite);
+   }
+   
+   private void OnRoundReady()
+   {
+      CallDeferred(nameof(BodyPartToExamine), GetNode<Sprite2D>(ChooseRandomBodyPartName()));
+   }
 }

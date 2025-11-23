@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://d3fhieqsrstto"]
+[gd_scene load_steps=27 format=3 uid="uid://d3fhieqsrstto"]
 
 [ext_resource type="Texture2D" uid="uid://byq3u74svq7i2" path="res://Assets/Sprites/DoctorOffice.png" id="1_r0du0"]
+[ext_resource type="Script" uid="uid://nxj07c6tn78x" path="res://Main.cs" id="1_xrxkg"]
 [ext_resource type="Texture2D" uid="uid://dcf5xgymbebgl" path="res://Assets/Sprites/EarSprite.png" id="2_03owx"]
 [ext_resource type="Script" uid="uid://cy8hp7gg4v20w" path="res://Patient.cs" id="2_lgr22"]
 [ext_resource type="AudioStream" uid="uid://3svqv62e7uet" path="res://Assets/Sounds/FixedSound.mp3" id="2_uu6xs"]
@@ -27,6 +28,7 @@
 [ext_resource type="AudioStream" uid="uid://di2nsgwglb805" path="res://Assets/Sounds/EyePainSpanish.mp3" id="25_mxvw5"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_xrxkg")
 
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(574.5, 323.5)
@@ -87,17 +89,17 @@ scale = Vector2(0.0596924, 0.0615234)
 texture = ExtResource("11_mxvw5")
 
 [node name="PatientSprite_Neutral" type="Sprite2D" parent="Patient"]
-position = Vector2(657, 378)
-scale = Vector2(0.334473, 0.325846)
+position = Vector2(531, 374)
+scale = Vector2(0.334473, 0.320313)
 texture = ExtResource("4_trn2v")
 
 [node name="PatientSprite_Joy" type="Sprite2D" parent="Patient"]
-position = Vector2(657, 378.25)
+position = Vector2(532, 371)
 scale = Vector2(0.324219, 0.317383)
 texture = ExtResource("5_03owx")
 
 [node name="PatientSprite_Discomfort" type="Sprite2D" parent="Patient"]
-position = Vector2(658, 380)
+position = Vector2(530, 373)
 scale = Vector2(0.365234, 0.320313)
 texture = ExtResource("6_wkp8b")
 
