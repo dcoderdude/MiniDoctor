@@ -80,11 +80,12 @@ scale = Vector2(0.0719009, 0.0785445)
 texture = ExtResource("4_wkp8b")
 
 [node name="LegoSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/RemovableObjectContainer"]
-position = Vector2(72, 81)
+position = Vector2(69.5, 82.5)
+scale = Vector2(0.610001, 0.73)
 texture = ExtResource("8_sc1dx")
 
 [node name="CoinSprite" type="Sprite2D" parent="Patient/ExaminationSection/ExaminationContainer/RemovableObjectContainer"]
-position = Vector2(66, 79)
+position = Vector2(67, 80)
 scale = Vector2(0.0596924, 0.0615234)
 texture = ExtResource("11_mxvw5")
 
@@ -99,8 +100,8 @@ scale = Vector2(0.324219, 0.317383)
 texture = ExtResource("5_03owx")
 
 [node name="PatientSprite_Discomfort" type="Sprite2D" parent="Patient"]
-position = Vector2(530, 373)
-scale = Vector2(0.365234, 0.320313)
+position = Vector2(531, 378)
+scale = Vector2(0.348633, 0.32487)
 texture = ExtResource("6_wkp8b")
 
 [node name="UI" type="Control" parent="."]

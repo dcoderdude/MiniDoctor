@@ -67,6 +67,10 @@ public partial class Patient : Node2D
    
    private void PlayBilingualDiscomfortVoiceLines()
    {
+      neutralSprite.Visible = false;
+      discomfortSprite.Visible = true;
+      joySprite.Visible = false;
+      
       Timer discomfortTimer = new Timer();
       AddChild(discomfortTimer);
       
@@ -132,6 +136,11 @@ public partial class Patient : Node2D
          toNeutraltimer.QueueFree();
       };
       toNeutraltimer.Start();
+   }
+   
+   private void SetDiscomfortExpression()
+   {
+      
    }
    
    private void OnBilingualVoiceLinesComplete()
