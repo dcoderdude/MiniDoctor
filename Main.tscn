@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://d3fhieqsrstto"]
+[gd_scene load_steps=30 format=3 uid="uid://d3fhieqsrstto"]
 
 [ext_resource type="Texture2D" uid="uid://byq3u74svq7i2" path="res://Assets/Sprites/DoctorOffice.png" id="1_r0du0"]
 [ext_resource type="Script" uid="uid://nxj07c6tn78x" path="res://Main.cs" id="1_xrxkg"]
@@ -13,16 +13,19 @@
 [ext_resource type="Texture2D" uid="uid://c8lgitd13fu5x" path="res://Assets/Sprites/PatientSprite_Joy.png" id="5_03owx"]
 [ext_resource type="Texture2D" uid="uid://e2l7bimpfbh1" path="res://Assets/Sprites/MouthSprite.png" id="5_fpfj3"]
 [ext_resource type="Texture2D" uid="uid://dldxedxkaiu5l" path="res://Assets/Sprites/PatientSprite_Discomfort.png" id="6_wkp8b"]
-[ext_resource type="Texture2D" uid="uid://85fnlooqegle" path="res://Assets/Sprites/Exit.png" id="7_03owx"]
 [ext_resource type="Texture2D" uid="uid://cryatb01qlkmm" path="res://Assets/Sprites/EyeSprite.png" id="7_hhcpw"]
 [ext_resource type="Script" uid="uid://prw8vasfxf63" path="res://ExitButton.cs" id="7_trn2v"]
 [ext_resource type="Texture2D" uid="uid://c3we65aqia6e3" path="res://Assets/Sprites/LegoSprite.png" id="8_sc1dx"]
 [ext_resource type="Texture2D" uid="uid://pucy1417bj70" path="res://Assets/Sprites/CoinSprite.png" id="11_mxvw5"]
 [ext_resource type="AudioStream" uid="uid://mh0gjfr63pgp" path="res://Assets/Sounds/EarPainEnglish.mp3" id="13_c2ibq"]
 [ext_resource type="AudioStream" uid="uid://cdvvtqxhv4g0r" path="res://Assets/Sounds/EarPainSpanish.mp3" id="14_j4qnp"]
+[ext_resource type="Texture2D" uid="uid://jekn7qib0q0x" path="res://Assets/Sprites/AllDoneButton.png" id="16_sqvbp"]
+[ext_resource type="Script" uid="uid://ca2033svv57yo" path="res://Controls.cs" id="16_w3rk5"]
 [ext_resource type="AudioStream" uid="uid://13po63u0fr3a" path="res://Assets/Sounds/MouthPainEnglish.mp3" id="17_sc1dx"]
+[ext_resource type="Texture2D" uid="uid://xu7rqtduf2ix" path="res://Assets/Sprites/MoreButton.png" id="18_hri7i"]
 [ext_resource type="AudioStream" uid="uid://be2cbrqwi7ujs" path="res://Assets/Sounds/MouthPainSpanish.mp3" id="18_kjvhd"]
 [ext_resource type="AudioStream" uid="uid://j56c2jhbbjhl" path="res://Assets/Sounds/ReliefEnglish.mp3" id="19_2gh4u"]
+[ext_resource type="Script" uid="uid://cdim4uvtmn6mm" path="res://ReplayButton.cs" id="20_5mvff"]
 [ext_resource type="AudioStream" uid="uid://dwgysfjn7im2l" path="res://Assets/Sounds/ReliefSpanish.mp3" id="20_devvj"]
 [ext_resource type="AudioStream" uid="uid://cm473yw7sgsnc" path="res://Assets/Sounds/EyePainEnglish.mp3" id="24_xrxkg"]
 [ext_resource type="AudioStream" uid="uid://di2nsgwglb805" path="res://Assets/Sounds/EyePainSpanish.mp3" id="25_mxvw5"]
@@ -100,24 +103,35 @@ scale = Vector2(0.324219, 0.317383)
 texture = ExtResource("5_03owx")
 
 [node name="PatientSprite_Discomfort" type="Sprite2D" parent="Patient"]
-position = Vector2(531, 378)
-scale = Vector2(0.348633, 0.32487)
+position = Vector2(531, 373.25)
+scale = Vector2(0.348633, 0.318685)
 texture = ExtResource("6_wkp8b")
 
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Controls" type="ColorRect" parent="."]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1150.0
+offset_bottom = 647.0
+color = Color(0, 0, 0, 0.6)
+script = ExtResource("16_w3rk5")
 
-[node name="Exit" type="Button" parent="UI"]
+[node name="ExitButton" type="Button" parent="Controls"]
 layout_mode = 0
-offset_left = 1042.0
-offset_top = 22.0
-offset_right = 1130.0
-offset_bottom = 110.0
-icon = ExtResource("7_03owx")
+offset_left = 928.0
+offset_top = 130.0
+offset_right = 1136.0
+offset_bottom = 338.0
+icon = ExtResource("16_sqvbp")
 script = ExtResource("7_trn2v")
+
+[node name="ReplayButton" type="Button" parent="Controls"]
+layout_mode = 0
+offset_left = 930.0
+offset_top = 348.0
+offset_right = 1138.0
+offset_bottom = 556.0
+icon = ExtResource("18_hri7i")
+script = ExtResource("20_5mvff")
 
 [node name="Audio" type="Node" parent="."]
 

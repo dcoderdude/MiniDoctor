@@ -138,11 +138,6 @@ public partial class Patient : Node2D
       toNeutraltimer.Start();
    }
    
-   private void SetDiscomfortExpression()
-   {
-      
-   }
-   
    private void OnBilingualVoiceLinesComplete()
    {
       EmitSignal("AudioQue");
